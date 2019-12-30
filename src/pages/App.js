@@ -7,19 +7,19 @@ function App() {
   return (
     <Router>
       <div className={styles.container}>
-        <nav>
+        <nav className={styles.nav}>
           {routes
             .filter(({ isNavBar = true }) => isNavBar)
             .map(({ name, path, isExternal }) => {
               if (isExternal) {
                 return (
-                  <li>
+                  <li className={styles.link}>
                     <a href={path}>{name}</a>
                   </li>
                 );
               } else {
                 return (
-                  <li>
+                  <li className={styles.link}>
                     <Link to={path}>{name}</Link>
                   </li>
                 );
