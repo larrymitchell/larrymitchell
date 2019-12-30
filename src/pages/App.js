@@ -1,9 +1,10 @@
 import React from "react";
-import routes from "config/routes";
+import useRoutes from "hooks/useRoutes";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styles from "./style.module.css";
 
-function App() {
+const App = () => {
+  const routes = useRoutes();
   return (
     <Router>
       <div className={styles.container}>
@@ -26,15 +27,15 @@ function App() {
         <Switch>
           {routes
             .filter(({ isExternal = false }) => !isExternal)
-            .map(({ component, path }) => (
+            .map(({ component: Component, path }) => (
               <Route path={path} key={path}>
-                {component}
+                {<Component></Component>}
               </Route>
             ))}
         </Switch>
       </div>
     </Router>
   );
-}
+};
 
 export default App;
