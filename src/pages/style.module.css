@@ -25,7 +25,7 @@
 .link {
   list-style-type: none;
   text-shadow: 0px 0px 5px;
-  font-variant-caps: small-caps;
+  text-transform: uppercase;
 }
 
 .link a {
