@@ -8,6 +8,7 @@ function App() {
     <Router>
       <div className={styles.container}>
         <nav className={styles.nav}>
+          <h1 className={styles.name}>LAWRENCE MITCHELL</h1>
           {routes
             .filter(({ isNavBar = true }) => isNavBar)
             .map(({ name, path, isExternal }) =>
