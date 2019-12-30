@@ -6,7 +6,13 @@ const Illustrations = () => {
   return (
     <div>
       <button onClick={previous}>previous</button>
-      <img src={path} alt={title}></img>
+      <img
+        src={path}
+        alt={title}
+        style={{
+          maxWidth: "100vw"
+        }}
+      ></img>
       <button onClick={next}>next</button>
     </div>
   );
