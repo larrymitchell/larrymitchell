@@ -10,19 +10,21 @@ const App = () => {
       <div className={styles.container}>
         <nav className={styles.nav}>
           <h1 className={styles.name}>LAWRENCE MITCHELL</h1>
-          {routes
-            .filter(({ isNavBar = true }) => isNavBar)
-            .map(({ name, path, isExternal }) =>
-              isExternal ? (
-                <li className={styles.link} key={path}>
-                  <a href={path}>{name}</a>
-                </li>
-              ) : (
-                <li className={styles.link} key={path}>
-                  <Link to={path}>{name}</Link>
-                </li>
-              )
-            )}
+          <ul className={styles.linkList}>
+            {routes
+              .filter(({ isNavBar = true }) => isNavBar)
+              .map(({ name, path, isExternal }) =>
+                isExternal ? (
+                  <li className={styles.link} key={path}>
+                    <a href={path}>{name}</a>
+                  </li>
+                ) : (
+                  <li className={styles.link} key={path}>
+                    <Link to={path}>{name}</Link>
+                  </li>
+                )
+              )}
+          </ul>
         </nav>
         <Switch>
           {routes
