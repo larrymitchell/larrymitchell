@@ -1,11 +1,12 @@
 import React from "react";
 import routes from "config/routes";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import styles from "./style.module.css";
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className={styles.container}>
         <nav>
           {routes
             .filter(({ isNavBar = true }) => isNavBar)
