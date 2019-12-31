@@ -1,5 +1,10 @@
 import React from "react";
 
-const About = () => <p>Hi my name is Larry. I do art.</p>;
+const About = () => (
+  <>
+    <h2>Hi, I'm Lawrence Mitchell!</h2>
+    <p>Designer and Creative</p>
+  </>
+);
 
 export default About;

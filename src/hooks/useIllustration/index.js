@@ -20,14 +20,24 @@ const useIllustration = () => {
       ),
     [currentImageKey, imageKeys]
   );
-  const nextImageKey = useMemo(() => {
-    return imageKeys[currentImageKeyIndex + 1];
-  }, [currentImageKeyIndex, imageKeys]);
-  const previousImageKey = useMemo(() => {
-    return currentImageKeyIndex === 0
-      ? imageKeys[imageKeys.length - 1]
-      : imageKeys[currentImageKeyIndex - 1];
-  }, [currentImageKeyIndex, imageKeys]);
+  const nextImageKey = useMemo(
+    () =>
+      imageKeys[
+        currentImageKeyIndex === imageKeys.length - 1
+          ? 0
+          : currentImageKeyIndex + 1
+      ],
+    [currentImageKeyIndex, imageKeys]
+  );
+  const previousImageKey = useMemo(
+    () =>
+      imageKeys[
+        currentImageKeyIndex === 0
+          ? imageKeys.length - 1
+          : currentImageKeyIndex - 1
+      ],
+    [currentImageKeyIndex, imageKeys]
+  );
   const next = useCallback(() => setCurrentImageKey(nextImageKey), [
     nextImageKey
   ]);
