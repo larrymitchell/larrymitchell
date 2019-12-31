@@ -13,17 +13,15 @@ const App = () => {
           <ul className={styles.linkList}>
             {routes
               .filter(({ isNavBar = true }) => isNavBar)
-              .map(({ name, path, isExternal }) =>
-                isExternal ? (
-                  <li className={styles.link} key={path}>
+              .map(({ name, path, isExternal }) => (
+                <li className={styles.link} key={path}>
+                  {isExternal ? (
                     <a href={path}>{name}</a>
-                  </li>
-                ) : (
-                  <li className={styles.link} key={path}>
+                  ) : (
                     <Link to={path}>{name}</Link>
-                  </li>
-                )
-              )}
+                  )}
+                </li>
+              ))}
           </ul>
         </nav>
         <Switch>
