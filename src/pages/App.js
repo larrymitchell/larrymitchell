@@ -24,15 +24,17 @@ const App = () => {
               ))}
           </ul>
         </nav>
-        <Switch>
-          {routes
-            .filter(({ isExternal = false }) => !isExternal)
-            .map(({ component: Component, path }) => (
-              <Route exact path={path} key={path}>
-                {<Component />}
-              </Route>
-            ))}
-        </Switch>
+        <main>
+          <Switch>
+            {routes
+              .filter(({ isExternal = false }) => !isExternal)
+              .map(({ component: Component, path }) => (
+                <Route exact path={path} key={path}>
+                  {<Component />}
+                </Route>
+              ))}
+          </Switch>
+        </main>
       </div>
     </Router>
   );
