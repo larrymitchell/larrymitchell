@@ -1,13 +1,14 @@
 .container {
   background-color: white;
   min-height: 100vh;
+  display: grid;
+  grid-template-rows: 4rem auto;
 }
 
 .nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 4rem;
   user-select: none;
 }
 

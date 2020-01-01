@@ -29,7 +29,7 @@ const App = () => {
             .filter(({ isExternal = false }) => !isExternal)
             .map(({ component: Component, path }) => (
               <Route exact path={path} key={path}>
-                {<Component></Component>}
+                {<Component />}
               </Route>
             ))}
         </Switch>
