@@ -17,10 +17,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && npm run post-build",
+    "build": "react-scripts build",
     "post-build": "rm -rf ./doc && cp -a ./build/. ./doc/ && npm run expand-build",
     "expand-build": "npm run expand-build-js; npm run expand-build-css",
-    "expand-build-js": "prettier --write ./doc/**/*.js",
+    "expand-build-js": "prettier --write ./doc/**/*{.js,.js.map}",
     "expand-build-css": "prettier --write ./doc/**/*.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
