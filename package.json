@@ -22,6 +22,7 @@
     "expand-build": "npm run expand-build-js; npm run expand-build-css",
     "expand-build-js": "prettier --write ./doc/**/*{.js,.js.map}",
     "expand-build-css": "prettier --write ./doc/**/*.css",
+    "optimize-images": "node ./scripts/optimize-images.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -44,6 +45,7 @@
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.17.0",
     "prettier": "^1.19.1",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "webp-converter": "^2.2.3"
   }
 }
